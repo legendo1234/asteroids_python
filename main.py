@@ -14,6 +14,9 @@ def main():
    
     screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
     
+    clock = pygame.time.Clock()
+    dt = 0
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -21,6 +24,10 @@ def main():
 
         screen.fill("black")  # Fill the screen with a solid color
         pygame.display.flip()  # Refresh the display
+
+        
+        miliseconds = clock.tick(60)
+        dt = miliseconds / 1000
 
 
 
